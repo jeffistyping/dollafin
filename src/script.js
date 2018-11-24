@@ -73,7 +73,7 @@ export function draw() {
     options: {
       title: {
         display: true,
-        text: "Net balance growth in a Month"
+        text: "Net Balance Growth in a Month"
       },
       scales: {
         yAxes: [{
@@ -85,7 +85,7 @@ export function draw() {
         xAxes: [{
           scaleLabel: {
             display: true,
-            labelString: "Day of the Month"
+            labelString: "Day"
           }
         }]
       },
@@ -98,11 +98,16 @@ export function draw() {
           },
           font: function (context) {
             // Change the label text color based on our new `hovered` context value.
-            return context.hovered ? { weight: 'bold', size: 11 } : { weight: 'bold', size: 10 };
+            return context.hovered ? { weight: 'bold', size: 12} : { weight: 'bold', size: 11};
           },
-          anchor: "top",
-          align: "340",
-          offset: "5",
+          anchor: "end",
+          align: "270",
+          offset: function(context){
+            if (context.dataIndex % 2){
+              return "6"
+            }
+           return "0";
+          },
           formatter: function (value, context) {
             if (moneySpent[context.dataIndex + 1] < 0) {
               return context.hovered ? itemBought[context.dataIndex + 1] : "$" + moneySpent[context.dataIndex + 1];
@@ -195,7 +200,7 @@ export function draw() {
       labels: items,
       datasets: [
         {
-          label: "Purchases by category ($)",
+          label: "Purchases by Category ($)",
           //"#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"
           backgroundColor: ["#ffcdb2", "#ffb4a2", "#e5989b", "#b5838d", "#87838e", "#afacb3", "#c9c8cc"],
           data: itemsValue
@@ -203,18 +208,24 @@ export function draw() {
       ]
     },
     options: {
+      legend: {
+        position: "bottom"
+      },
       title: {
         display: true,
-        text: 'Purchases by category ($)'
+        text: 'Purchases by Category ($)'
       },
       plugins: {
         datalabels: {
           color: 'black',
-          anchor: "top",
-          align: "center",
-          offset: "2",
+          anchor: "end",
+          align: "end",
+          offset: "-5",
+          font:{
+            size: 10
+          },
           formatter: function (value) {
-            return "$" + value;
+            return value;
           }
         }
       },
