@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LEAGUE OF LEGENDS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-light bg-success" style="box-shadow: 0 0px 10px 1px rgba(0,0,0,1)">
+        <span class="navbar-text text-light"><h3>dolla dolla bills</h3></span>
+    </nav>
+
+
+    <div class="row" style="height: 100vh; overflow: auto">
+        <div class="col-8 bg-light">
+            <img src="banknocoin.png" onmouseover="onHover(this);" onmouseout="offHover(this);" class="mx-auto d-block mt-5 pt-5" />
+            <h1 class="text-center pt-2 text-success">Balance: $</h1>
+
+        </div>
+        <div class="col-4 bg-dark">
+
+        </div>
+    </div>
+    <script>
+        function onHover(element){
+            element.setAttribute('src', 'bank.png');
+        }
+        function offHover(element){
+            element.setAttribute('src', 'banknocoin.png');
+        }
+    </script>
+</body>
+</html>

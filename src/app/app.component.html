@@ -1,0 +1,38 @@
+<nav class="navbar fixed-top navbar-light bg-success" style="box-shadow: 0 0px 10px 1px rgba(0,0,0,1)">
+    <span class="navbar-text text-light"><h3>dolla dolla bills</h3></span>
+</nav>
+
+
+<div class="row" style="height: 90vh; overflow: auto">
+    <div class="col-8 bg-light">
+        <img src="{{src}}" (mouseenter)="onHover();" (mouseleave)="offHover();" class="mx-auto d-block mt-5 pt-5" (click)="addMoney()"/>
+        <h1 class="text-center pt-2 text-success">Balance: ${{ money | number : '1.2-2' }}</h1>
+
+    </div>
+    <div class="col-4 bg-secondary" style="margin-top: 100px">
+        <table>
+            <thead>
+                <th>Item</th>
+                <th>Cost</th>
+                <th>Category</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{ item.name }}</td>
+                    <td>${{ item.cost | number : '1.2-2' }}</td>
+                    <td>{{ item.category }}</td>
+                    <td><a (click)="buy(item)" class="btn btn-success">Buy</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
+<div class="row bg-dark" style="height=10vh">
+    <span style="margin:auto">
+        {{ log }}
+    </span>>
+  </div>  
+
