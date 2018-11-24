@@ -101,8 +101,8 @@ export function draw() {
             return context.hovered ? { weight: 'bold', size: 11 } : { weight: 'bold', size: 10 };
           },
           anchor: "top",
-          align: "330",
-          offset: "2",
+          align: "340",
+          offset: "5",
           formatter: function (value, context) {
             if (moneySpent[context.dataIndex + 1] < 0) {
               return context.hovered ? itemBought[context.dataIndex + 1] : "$" + moneySpent[context.dataIndex + 1];
@@ -203,10 +203,6 @@ export function draw() {
       ]
     },
     options: {
-      // onClick: function(e, legendItem) {
-      //   console.log(legendItem);
-      //   Chart.defaults.doughnut.legend.onClick;
-      // },
       title: {
         display: true,
         text: 'Purchases by category ($)'

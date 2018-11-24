@@ -1,3 +1,10 @@
-td,th {
-    padding: 10px;
+/*td,th {*/
+    /*padding: 10px;*/
+/*}*/
+
+#categoryDoughnut {
+    width: 100px;
+    height: 100px;
 }
+
+
