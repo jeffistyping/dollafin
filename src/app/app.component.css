@@ -3,8 +3,8 @@
 /*}*/
 
 #categoryDoughnut {
-    width: 100px;
-    height: 100px;
+    max-width: 45vw;
+    max-height: 45vh;
 }
 
 
