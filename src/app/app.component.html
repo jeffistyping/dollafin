@@ -4,21 +4,15 @@
 
 <div class="container-fluid">
     <div class="row bg-light">
-
         <div class="col-md-3 bg-white" style="height: 100vh; position: fixed">
-
             <img src="{{src}}" style="width:80%" (mousedown)="onClickPig();" (mouseup)="onHover();" (mouseenter)="onHover();" (mouseleave)="offHover();" class="mx-auto d-block mt-5 pt-5" (click)="addMoney()"/>
             <h1 class="text-center pt-2 text-success">Balance: ${{ money | number : '1.2-2' }}</h1>
-
         </div>
-
         <div class="col-6 offset-3 mt-4 pt-4" style="max-height: 100vh; position: fixed">
-            <div class="container"  >
+            <div class="container">
                 <canvas id="purchaseChart" width="100vw" height="40vh"></canvas>
                 <canvas id="categoryDoughnut"></canvas>
             </div>
-
-
         </div>
         <div class="col-md-3 mt-4 pt-4 mb-3 pb-1 offset-9 bg-dark" style="min-height: 120vh;  overflow: auto">
             <table class="table table-striped table-dark table-hover">
