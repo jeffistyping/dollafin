@@ -94,4 +94,9 @@ export class AppComponent implements OnInit {
   offHover = function(){
     this.src = 'assets/banknocoin.png';
   };
+
+  onClickPig = function(){
+    this.src = 'assets/moneypig.png';
+  };
+
 }
