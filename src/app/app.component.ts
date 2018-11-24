@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { draw } from '../script.js';
 
 // salary const gonna get from backend
 const SALARY = 20;
@@ -28,6 +29,9 @@ export class AppComponent implements OnInit {
   src: String;
 
   ngOnInit() : void {
+
+    draw();
+
     this.salary = SALARY;
     this.money = 0;
     this.title = "GAME";
