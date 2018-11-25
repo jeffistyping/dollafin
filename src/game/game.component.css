@@ -1,0 +1,8 @@
+/*td,th {*/
+    /*padding: 10px;*/
+/*}*/
+
+#categoryDoughnut {
+    max-width: 45vw;
+    max-height: 45vh;
+}

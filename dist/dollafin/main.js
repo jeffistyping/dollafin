@@ -49,11 +49,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
-    { path: 'main', component: _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"] },
-    { path: '**',
-        redirectTo: '/main',
-        pathMatch: 'full'
-    }
+    { path: 'main', component: _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"] }
 ];
 // ngModule has to be at the end 
 var AppRoutingModule = /** @class */ (function () {
@@ -79,7 +75,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/*td,th {*/\n    /*padding: 10px;*/\n    /*}*/\n    #categoryDoughnut {\n    max-width: 45vw;\n    max-height: 45vh;\n}\n\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsV0FBVztJQUNQLGtCQUFrQjtJQUN0QixLQUFLO0lBRUw7SUFDSSxnQkFBZ0I7SUFDaEIsaUJBQWlCO0NBQ3BCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKnRkLHRoIHsqL1xuICAgIC8qcGFkZGluZzogMTBweDsqL1xuLyp9Ki9cblxuI2NhdGVnb3J5RG91Z2hudXQge1xuICAgIG1heC13aWR0aDogNDV2dztcbiAgICBtYXgtaGVpZ2h0OiA0NXZoO1xufVxuXG5cbiJdfQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -90,7 +86,7 @@ module.exports = "/*td,th {*/\n    /*padding: 10px;*/\n    /*}*/\n    #categoryD
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar fixed-top navbar-light bg-success\" style=\"height:5vh;box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n    <span class=\"text-white\"><h5>dolla dolla bills</h5></span>\n</nav>\n\n<div class=\"container-fluid\">\n    <div class=\"row bg-light\">\n        <div class=\"col-md-3 bg-white\" style=\"height: 100vh; position: fixed\">\n            <img src=\"{{src}}\" style=\"width:80%\" (mousedown)=\"onClickPig();\" (mouseup)=\"onHover();\" (mouseenter)=\"onHover();\" (mouseleave)=\"offHover();\" class=\"mx-auto d-block mt-5 pt-5\" (click)=\"addMoney()\"/>\n            <h1 class=\"text-center pt-2 text-success\">Balance: ${{ money | number : '1.2-2' }}</h1>\n        </div>\n        <div class=\"col-6 offset-3 mt-4 pt-4\" style=\"max-height: 100vh; position: fixed\">\n            <div class=\"container\">\n                <canvas id=\"purchaseChart\" width=\"100vw\" height=\"40vh\"></canvas>\n                <canvas id=\"categoryDoughnut\"></canvas>\n            </div>\n        </div>\n        <div class=\"col-md-3 mt-4 pt-4 mb-3 pb-1 offset-9 bg-dark\" style=\"min-height: 120vh;  overflow: auto\">\n            <table class=\"table table-striped table-dark table-hover\">\n                <thead>\n                <th>Item</th>\n                <th>Cost</th>\n                <th>Category</th>\n                <th>Status</th>\n                </thead>\n                <tbody>\n                <tr *ngFor=\"let item of items\">\n                    <td>{{ item.name }}</td>\n                    <td>${{ item.cost | number : '1.2-2' }}</td>\n                    <td>{{ item.category }}</td>\n                    <td><a (click)=\"buy(item)\" class=\"btn btn-success\">Buy</a></td>\n                </tr>\n                </tbody>\n            </table>\n        </div>\n\n    </div>\n\n    <div class=\"row text-white fixed-bottom\" style=\"height:5vh; background-color: #212529\">\n    <span style=\"margin:auto\">\n        {{ log }}\n    </span>>\n    </div>\n\n</div>\n\n\n"
+module.exports = "<div>\n    <a routerLink=\"/test\">TESTING</a>\n    <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -105,7 +101,6 @@ module.exports = "<nav class=\"navbar fixed-top navbar-light bg-success\" style=
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _script_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../script.js */ "./src/script.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -113,75 +108,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-
-// salary const gonna get from backend
-var SALARY = 20;
-// event constants
-var DEATH = 0.0125;
-var BAD = 0.175;
-var SALE = 0.45;
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.items = [];
-        this.categories = [];
-        this.addMoney = function () {
-            this.money += this.salary;
-        };
-        this.buy = function (item) {
-            if (this.money < item.cost) {
-                return;
-            }
-            console.log("bought " + item.name + " for " + item.cost);
-            this.money -= item.cost;
-        };
-        this.onHover = function () {
-            this.src = 'assets/bank.png';
-        };
-        this.offHover = function () {
-            this.src = 'assets/banknocoin.png';
-        };
-        this.onClickPig = function () {
-            this.src = 'assets/moneypig.png';
-        };
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        Object(_script_js__WEBPACK_IMPORTED_MODULE_1__["draw"])();
-        this.salary = SALARY;
-        this.money = 0;
-        this.title = "GAME";
-        this.src = "assets/banknocoin.png";
-        this.log = "";
-        for (var i = 0; i < 10; i++) {
-            this.items.push({
-                'name': 'item' + i,
-                'cost': Math.random() * 100,
-                'category': 'category' + (i % 3)
-            });
-        }
-        this.game = setInterval(function () {
-            var r = Math.random();
-            if (r < DEATH) {
-                alert("You died");
-                window.location.reload(false);
-            }
-            else if (r < BAD) {
-                _this.log = "Something bad happened. You lost $" + Math.floor(Math.random() * 1000);
-            }
-            else if (r < SALE) {
-                // reduce the cost for now and increase it back in 1s
-                var i_1 = _this.items[Math.floor(Math.random() * _this.items.length)];
-                var sale_1 = 0.5 + (Math.random() * 0.4);
-                i_1.cost *= sale_1;
-                setTimeout(function () { return i_1.cost /= sale_1; }, 1000);
-                _this.log = "Item \"" + i_1.name + "\" is on sale";
-            }
-            else {
-                _this.log = '';
-                console.log("But nothing happened!");
-            }
-        }, 1000);
-    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
@@ -210,7 +139,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../login/login.component */ "./src/login/login.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _game_game_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../game/game.component */ "./src/game/game.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -222,20 +153,29 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+var routes = [
+    { path: 'home', component: _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"] },
+    { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
+    { path: 'game', component: _game_game_component__WEBPACK_IMPORTED_MODULE_4__["GameComponent"] },
+    { path: '', redirectTo: '/home', pathMatch: 'full' }
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"], _game_game_component__WEBPACK_IMPORTED_MODULE_4__["GameComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"]
+                _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot(routes),
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
             ],
             providers: [],
-            bootstrap: [_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -273,6 +213,131 @@ var environment = {
 
 /***/ }),
 
+/***/ "./src/game/game.component.css":
+/*!*************************************!*\
+  !*** ./src/game/game.component.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/*td,th {*/\n    /*padding: 10px;*/\n    /*}*/\n    #categoryDoughnut {\n    max-width: 45vw;\n    max-height: 45vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9nYW1lL2dhbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxXQUFXO0lBQ1Asa0JBQWtCO0lBQ3RCLEtBQUs7SUFFTDtJQUNJLGdCQUFnQjtJQUNoQixpQkFBaUI7Q0FDcEIiLCJmaWxlIjoic3JjL2dhbWUvZ2FtZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyp0ZCx0aCB7Ki9cbiAgICAvKnBhZGRpbmc6IDEwcHg7Ki9cbi8qfSovXG5cbiNjYXRlZ29yeURvdWdobnV0IHtcbiAgICBtYXgtd2lkdGg6IDQ1dnc7XG4gICAgbWF4LWhlaWdodDogNDV2aDtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/game/game.component.html":
+/*!**************************************!*\
+  !*** ./src/game/game.component.html ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar fixed-top navbar-light bg-success\" style=\"height:5vh;box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n    <span class=\"text-white\"><h5>dolla dolla bills</h5></span>\n</nav>\n\n<div class=\"container-fluid\">\n    <div class=\"row bg-light\">\n        <div class=\"col-md-3 bg-white\" style=\"height: 100vh; position: fixed\">\n            <img src=\"{{src}}\" style=\"width:80%\" (mousedown)=\"onClickPig();\" (mouseup)=\"onHover();\" (mouseenter)=\"onHover();\" (mouseleave)=\"offHover();\" class=\"mx-auto d-block mt-5 pt-5\" (click)=\"addMoney()\"/>\n            <h1 class=\"text-center pt-2 text-success\">Balance: ${{ money | number : '1.2-2' }}</h1>\n        </div>\n        <div class=\"col-6 offset-3 mt-4 pt-4\" style=\"max-height: 100vh; position: fixed\">\n            <div class=\"container\">\n                <canvas id=\"purchaseChart\" width=\"100vw\" height=\"40vh\"></canvas>\n                <canvas id=\"categoryDoughnut\"></canvas>\n            </div>\n        </div>\n        <div class=\"col-md-3 mt-4 pt-4 mb-3 pb-1 offset-9 bg-dark\" style=\"min-height: 120vh;  overflow: auto\">\n            <table class=\"table table-striped table-dark table-hover\">\n                <thead>\n                <th>Item</th>\n                <th>Cost</th>\n                <th>Category</th>\n                <th>Status</th>\n                </thead>\n                <tbody>\n                <tr *ngFor=\"let item of items\">\n                    <td>{{ item.name }}</td>\n                    <td>${{ item.cost | number : '1.2-2' }}</td>\n                    <td>{{ item.category }}</td>\n                    <td><a (click)=\"buy(item)\" class=\"btn btn-success\">Buy</a></td>\n                </tr>\n                </tbody>\n            </table>\n        </div>\n\n    </div>\n\n    <div class=\"row text-white fixed-bottom\" style=\"height:5vh; background-color: #212529\">\n    <span style=\"margin:auto\">\n        {{ log }}\n    </span>>\n    </div>\n\n</div>\n\n\n"
+
+/***/ }),
+
+/***/ "./src/game/game.component.ts":
+/*!************************************!*\
+  !*** ./src/game/game.component.ts ***!
+  \************************************/
+/*! exports provided: GameComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GameComponent", function() { return GameComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _script_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../script.js */ "./src/script.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+// salary const gonna get from backend
+var SALARY = 20;
+// event constants
+var DEATH = 0;
+var BAD = 0.175;
+var SALE = 0.45;
+var GameComponent = /** @class */ (function () {
+    function GameComponent() {
+        this.items = [];
+        this.categories = [];
+        this.addMoney = function () {
+            this.money += this.salary;
+        };
+        this.buy = function (item) {
+            if (this.money < item.cost) {
+                return;
+            }
+            console.log("bought " + item.name + " for " + item.cost);
+            this.money -= item.cost;
+            Object(_script_js__WEBPACK_IMPORTED_MODULE_1__["buy"])(item.cost, item.category);
+        };
+        this.onHover = function () {
+            this.src = '../assets/bank.png';
+        };
+        this.offHover = function () {
+            this.src = '../assets/banknocoin.png';
+        };
+        this.onClickPig = function () {
+            this.src = '../assets/moneypig.png';
+        };
+    }
+    GameComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        Object(_script_js__WEBPACK_IMPORTED_MODULE_1__["draw"])();
+        this.salary = SALARY;
+        this.money = 0;
+        this.title = "GAME";
+        this.src = "../assets/banknocoin.png";
+        this.log = "";
+        for (var i = 0; i < 10; i++) {
+            this.items.push({
+                'name': 'item' + i,
+                'cost': parseFloat((Math.random() * 100).toFixed(2)),
+                'category': 'category' + (i % 3)
+            });
+        }
+        this.game = setInterval(function () {
+            var r = Math.random();
+            if (r < DEATH) {
+                alert("You died");
+                window.location.reload(false);
+            }
+            else if (r < BAD) {
+                _this.log = "Something bad happened. You lost $" + Math.floor(Math.random() * 1000);
+            }
+            else if (r < SALE) {
+                // reduce the cost for now and increase it back in 1s
+                var i_1 = _this.items[Math.floor(Math.random() * _this.items.length)];
+                var sale_1 = 0.5 + (Math.random() * 0.4);
+                i_1.cost *= sale_1;
+                setTimeout(function () { return i_1.cost /= sale_1; }, 1000);
+                _this.log = "Item \"" + i_1.name + "\" is on sale";
+            }
+            else {
+                _this.log = '';
+                console.log("But nothing happened!");
+            }
+        }, 1000);
+    };
+    GameComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-game',
+            template: __webpack_require__(/*! ./game.component.html */ "./src/game/game.component.html"),
+            styles: [__webpack_require__(/*! ./game.component.css */ "./src/game/game.component.css")]
+        })
+    ], GameComponent);
+    return GameComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/login/login.component.css":
 /*!***************************************!*\
   !*** ./src/login/login.component.css ***!
@@ -291,7 +356,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <nav class=\"navbar fixed-top navbar-light bg-success\" style=\"box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n        <span class=\"navbar-text text-light\">dolla dolla bills - Registration</span>\n    </nav>\n\n    <div class=\"div mt-5 pt-5\">\n    </div>\n\n    <form class=\"card\">\n        <div class=\"card-header\">\n            <h4>Input Information</h4>\n        </div>\n        <div class=\"card-body\">\n\n            <h5 class=\"pb-2\">Basic Information</h5>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Name</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"example-text-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-number-input\" class=\"col-2 col-form-label\">Age</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"example-number-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Financial Institution</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"financial-institution\">\n                </div>\n            </div>\n            <hr />\n\n            <h5 class=\"pb-2\">Top 5 Financial Goals</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-1\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-1\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 2</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-2\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-2\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 3</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-3\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-3\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 4</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-4\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-4\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 5</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-5\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-5\">\n                </div>\n            </div>\n\n            <hr />\n\n            <h5 class=\"pb-2\">10 Most Recent Purchases</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Category</label>\n            </div>\n        </div>\n        <button class=\"btn btn-primary\">Submit</button>\n    </form>\n</div>"
+module.exports = "<div class=\"container\">\n    <nav class=\"navbar fixed-top navbar-light bg-success\" style=\"box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n        <span class=\"navbar-text text-light\">dolla dolla bills - Registration</span>\n    </nav>\n\n    <div class=\"div mt-5 pt-5\">\n    </div>\n\n    <form class=\"card\">\n        <div class=\"card-header\">\n            <h4>Input Information</h4>\n        </div>\n        <div class=\"card-body\">\n\n            <h5 class=\"pb-2\">Basic Information</h5>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Name</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"example-text-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-number-input\" class=\"col-2 col-form-label\">Age</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"example-number-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Financial Institution</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"financial-institution\">\n                </div>\n            </div>\n            <hr />\n\n            <h5 class=\"pb-2\">Top 5 Financial Goals</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-1\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-1\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 2</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-2\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-2\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 3</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-3\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-3\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 4</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-4\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-4\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 5</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-5\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-5\">\n                </div>\n            </div>\n\n            <hr />\n\n            <h5 class=\"pb-2\">10 Most Recent Purchases</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Category</label>\n            </div>\n        </div>\n        <button routerLink=\"/main\" class=\"btn btn-primary\">Submit</button>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -362,70 +427,95 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*!***********************!*\
   !*** ./src/script.js ***!
   \***********************/
-/*! exports provided: draw */
+/*! exports provided: buy, draw */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buy", function() { return buy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "draw", function() { return draw; });
+var days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, ""];
+// For drawing the lines
+
+var NetBalance = [
+  20, 30, 60, 80, 65
+  , 43, 80, 110, 130, 142
+  , 150, 180, 210, 160, 180
+  , 211, 312, 325, 360, 391,
+  412, 423, 444, 234, 12,
+  30, 70, 120
+];
+
+var moneySpent = [];
+
+var itemBought = [
+  "", "", "", "", "Bubble Tea",
+  "Chipotle", "", "", "", "",
+  "", "", "", "Textbook", "",
+  "", "", "", "", "",
+  "", "", "", "Shoes", "Hoodie",
+  "", "", ""
+];
+
+var itemCategory = [
+  "", "", "", "", "Food",
+  "Food", "", "", "", "",
+  "", "", "", "School", "",
+  "", "", "", "", "",
+  "", "", "", "Clothing", "Clothing",
+  "", "", ""
+];
+
+var items = [];
+var itemsValue = [];
+var hidden = [];
+
+var doughnutty;
+
+function updateText(chart) {
+  chart.options.elements.center.text = getSum();
+  chart.update();
+}
+
+let getSum = function () {
+  let sum = 0;
+  for (let i = 0; i < itemsValue.length; i++) {
+    if (!hidden.includes(items[i])) {
+      sum += parseFloat(itemsValue[i].toFixed(2));
+    }
+  }
+  return '$' + parseFloat(sum.toFixed(2));
+}
+
+function buy(cost, category) {
+  let c = category.trim();
+  let i = items.indexOf(c);
+  if (i == -1) {
+    items.push(c)
+    itemsValue.push(parseFloat(cost.toFixed(2)));
+  } else {
+    itemsValue[i] = parseFloat((itemsValue[i] + cost).toFixed(2));
+  }
+
+  updateText(doughnutty);
+}
+
 // Our labels along the x-axis
 function draw() {
-  var days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, ""];
-  // For drawing the lines
-
-  var NetBalance = [
-    20, 30, 60, 80, 65
-    , 43, 80, 110, 130, 142
-    , 150, 180, 210, 160, 180
-    , 211, 312, 325, 360, 391,
-    412, 423, 444, 234, 12,
-    30, 70, 120
-  ];
-
-  var moneySpent = [
-    20, 10, 30, 20, -15,
-    -12, 37, 30, 20, 12,
-    8, 30, 30, -50, 20,
-    31, 101, 13, 35, 31,
-    21, 11, 21, -210, -222,
-    18, 40, 50
-  ];
-
-  var itemBought = [
-    "", "", "", "", "Bubble Tea",
-    "Chipotle", "", "", "", "",
-    "", "", "", "Textbook", "",
-    "", "", "", "", "",
-    "", "", "", "Shoes", "Hoodie",
-    "", "", ""
-  ];
-
-  var itemCategory = [
-    "", "", "", "", "Foods",
-    "Food", "", "", "", "",
-    "", "", "", "School", "",
-    "", "", "", "", "",
-    "", "", "", "Clothing", "Clothings",
-    "", "", ""
-  ];
-
-  var items = [];
-  var itemsValue = [];
-  var hidden = [];
 
   for (let i = 0; i < days.length; i++) {
     if (moneySpent[i + 1] < 0) {
       if (!items.includes(itemCategory[i + 1])) {
         items.push(itemCategory[i + 1]);
-        itemsValue.push(moneySpent[i + 1] * -1);
+        itemsValue.push(parseFloat(moneySpent[i+1] * -1).toFixed(2));
       } else {
-        itemsValue[items.indexOf(itemCategory[i + 1])] += moneySpent[i + 1] * -1;
+        itemsValue[items.indexOf(itemCategory[i + 1])] = parseFloat((itemsValue[items.indexOf(itemCategory[i + 1])] + (moneySpent[i + 1] * -1)).toFixed(2));
       }
     }
   }
 
   var ctx = document.getElementById("purchaseChart");
-  var myChart = new Chart(ctx, {
+  new Chart(ctx, {
     type: 'line',
     data: {
       labels: days,
@@ -435,6 +525,20 @@ function draw() {
           label: "Net Balance",
           borderColor: "#EBBB32",
           backgroundColor: "#EBBB32",
+          fill: false
+        },
+        {
+          data: [
+            20, 30, 60, 80, 120
+            , 140, 180, 190, 210, 241
+            , 269, 287, 311, 323, 353
+            , 379, 391, 423, 455, 461,
+            490, 523, 544, 584, 612,
+            683, 890, 1120
+          ],
+          label: "Net Income",
+          borderColor: "#0fa91b",
+          backgroundColor: "#0fa91b",
           fill: false
         }
       ],
@@ -471,16 +575,16 @@ function draw() {
             return context.hovered ? { weight: 'bold', size: 12} : { weight: 'bold', size: 11};
           },
           anchor: "end",
-          align: "270",
+          align: "90",
           offset: function(context){
             if (context.dataIndex % 2){
-              return "6"
+              return "0"
             }
-           return "0";
+           return "6";
           },
           formatter: function (value, context) {
-            if (moneySpent[context.dataIndex + 1] < 0) {
-              return context.hovered ? itemBought[context.dataIndex + 1] : "$" + moneySpent[context.dataIndex + 1];
+            if ((NetBalance[context.dataIndex+1]-NetBalance[context.dataIndex]) < 0 && context.dataset.label == "Net Balance") {
+              return context.hovered ? itemBought[context.dataIndex + 1] : "$" + (NetBalance[context.dataIndex+1]-NetBalance[context.dataIndex]);
             }
             return null;
           },
@@ -549,22 +653,7 @@ function draw() {
     updateText(doughnutty);
   };
 
-  function updateText(chart) {
-    chart.options.elements.center.text = getSum();
-    chart.update();
-  }
-
-  let getSum = function () {
-    let sum = 0;
-    for (let i = 0; i < itemsValue.length; i++) {
-      if (!hidden.includes(items[i])) {
-        sum += itemsValue[i];
-      }
-    }
-    return "$" + sum;
-  }
-
-  var doughnutty = new Chart(document.getElementById("categoryDoughnut"), {
+  doughnutty = new Chart(document.getElementById("categoryDoughnut"), {
     type: 'doughnut',
     data: {
       labels: items,
@@ -611,6 +700,8 @@ function draw() {
   });
 };
 
+
+
 /***/ }),
 
 /***/ 0:
@@ -620,7 +711,7 @@ function draw() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/jf/github/dollafin/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/kartikrajkanna/workspace/d_c/dollafin/src/main.ts */"./src/main.ts");
 
 
 /***/ })

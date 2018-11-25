@@ -1,61 +1,85 @@
+var days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, ""];
+// For drawing the lines
+
+var NetBalance = [
+  20, 30, 60, 80, 65
+  , 43, 80, 110, 130, 142
+  , 150, 180, 210, 160, 180
+  , 211, 312, 325, 360, 391,
+  412, 423, 444, 234, 12,
+  30, 70, 120
+];
+
+var moneySpent = [];
+
+var itemBought = [
+  "", "", "", "", "Bubble Tea",
+  "Chipotle", "", "", "", "",
+  "", "", "", "Textbook", "",
+  "", "", "", "", "",
+  "", "", "", "Shoes", "Hoodie",
+  "", "", ""
+];
+
+var itemCategory = [
+  "", "", "", "", "Food",
+  "Food", "", "", "", "",
+  "", "", "", "School", "",
+  "", "", "", "", "",
+  "", "", "", "Clothing", "Clothing",
+  "", "", ""
+];
+
+var items = [];
+var itemsValue = [];
+var hidden = [];
+
+var doughnutty;
+
+function updateText(chart) {
+  chart.options.elements.center.text = getSum();
+  chart.update();
+}
+
+let getSum = function () {
+  let sum = 0;
+  for (let i = 0; i < itemsValue.length; i++) {
+    if (!hidden.includes(items[i])) {
+      sum += parseFloat(itemsValue[i].toFixed(2));
+    }
+  }
+  return '$' + parseFloat(sum.toFixed(2));
+}
+
+export function buy(cost, category) {
+  let c = category.trim();
+  let i = items.indexOf(c);
+  if (i == -1) {
+    items.push(c)
+    itemsValue.push(parseFloat(cost.toFixed(2)));
+  } else {
+    itemsValue[i] = parseFloat((itemsValue[i] + cost).toFixed(2));
+  }
+
+  updateText(doughnutty);
+}
+
 // Our labels along the x-axis
 export function draw() {
-  var days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, ""];
-  // For drawing the lines
-
-  var NetBalance = [
-    20, 30, 60, 80, 65
-    , 43, 80, 110, 130, 142
-    , 150, 180, 210, 160, 180
-    , 211, 312, 325, 360, 391,
-    412, 423, 444, 234, 12,
-    30, 70, 120
-  ];
-
-  var moneySpent = [
-    20, 10, 30, 20, -15,
-    -12, 37, 30, 20, 12,
-    8, 30, 30, -50, 20,
-    31, 101, 13, 35, 31,
-    21, 11, 21, -210, -222,
-    18, 40, 50
-  ];
-
-  var itemBought = [
-    "", "", "", "", "Bubble Tea",
-    "Chipotle", "", "", "", "",
-    "", "", "", "Textbook", "",
-    "", "", "", "", "",
-    "", "", "", "Shoes", "Hoodie",
-    "", "", ""
-  ];
-
-  var itemCategory = [
-    "", "", "", "", "Foods",
-    "Food", "", "", "", "",
-    "", "", "", "School", "",
-    "", "", "", "", "",
-    "", "", "", "Clothing", "Clothings",
-    "", "", ""
-  ];
-
-  var items = [];
-  var itemsValue = [];
-  var hidden = [];
 
   for (let i = 0; i < days.length; i++) {
     if (moneySpent[i + 1] < 0) {
       if (!items.includes(itemCategory[i + 1])) {
         items.push(itemCategory[i + 1]);
-        itemsValue.push(moneySpent[i + 1] * -1);
+        itemsValue.push(parseFloat(moneySpent[i+1] * -1).toFixed(2));
       } else {
-        itemsValue[items.indexOf(itemCategory[i + 1])] += moneySpent[i + 1] * -1;
+        itemsValue[items.indexOf(itemCategory[i + 1])] = parseFloat((itemsValue[items.indexOf(itemCategory[i + 1])] + (moneySpent[i + 1] * -1)).toFixed(2));
       }
     }
   }
 
   var ctx = document.getElementById("purchaseChart");
-  var myChart = new Chart(ctx, {
+  new Chart(ctx, {
     type: 'line',
     data: {
       labels: days,
@@ -65,6 +89,20 @@ export function draw() {
           label: "Net Balance",
           borderColor: "#EBBB32",
           backgroundColor: "#EBBB32",
+          fill: false
+        },
+        {
+          data: [
+            20, 30, 60, 80, 120
+            , 140, 180, 190, 210, 241
+            , 269, 287, 311, 323, 353
+            , 379, 391, 423, 455, 461,
+            490, 523, 544, 584, 612,
+            683, 890, 1120
+          ],
+          label: "Net Income",
+          borderColor: "#0fa91b",
+          backgroundColor: "#0fa91b",
           fill: false
         }
       ],
@@ -101,16 +139,16 @@ export function draw() {
             return context.hovered ? { weight: 'bold', size: 12} : { weight: 'bold', size: 11};
           },
           anchor: "end",
-          align: "270",
+          align: "90",
           offset: function(context){
             if (context.dataIndex % 2){
-              return "6"
+              return "0"
             }
-           return "0";
+           return "6";
           },
           formatter: function (value, context) {
-            if (moneySpent[context.dataIndex + 1] < 0) {
-              return context.hovered ? itemBought[context.dataIndex + 1] : "$" + moneySpent[context.dataIndex + 1];
+            if ((NetBalance[context.dataIndex+1]-NetBalance[context.dataIndex]) < 0 && context.dataset.label == "Net Balance") {
+              return context.hovered ? itemBought[context.dataIndex + 1] : "$" + (NetBalance[context.dataIndex+1]-NetBalance[context.dataIndex]);
             }
             return null;
           },
@@ -179,22 +217,7 @@ export function draw() {
     updateText(doughnutty);
   };
 
-  function updateText(chart) {
-    chart.options.elements.center.text = getSum();
-    chart.update();
-  }
-
-  let getSum = function () {
-    let sum = 0;
-    for (let i = 0; i < itemsValue.length; i++) {
-      if (!hidden.includes(items[i])) {
-        sum += itemsValue[i];
-      }
-    }
-    return "$" + sum;
-  }
-
-  var doughnutty = new Chart(document.getElementById("categoryDoughnut"), {
+  doughnutty = new Chart(document.getElementById("categoryDoughnut"), {
     type: 'doughnut',
     data: {
       labels: items,
@@ -240,3 +263,4 @@ export function draw() {
     }
   });
 };
+
