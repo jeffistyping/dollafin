@@ -24,7 +24,7 @@ export class GameComponent implements OnInit {
   clicks: number;
   items: any[] = [];
   categories: string[] = [];
-  itemBought: string;
+  itemBought: string = '';
   game;
   _data: any[];
 
@@ -190,72 +190,72 @@ export class GameComponent implements OnInit {
           break;
         case 'pp1':
           if (this.items.length >= 1) {
-            this.items[0].cost = this._data[i].value;
+            this.items[0].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp2':
           if (this.items.length >= 2) {
-            this.items[1].cost = this._data[i].value;
+            this.items[1].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp3':
           if (this.items.length >= 3) {
-            this.items[2].cost = this._data[i].value;
+            this.items[2].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp4':
           if (this.items.length >= 4) {
-            this.items[3].cost = this._data[i].value;
+            this.items[3].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp5':
           if (this.items.length >= 5) {
-            this.items[4].cost = this._data[i].value;
+            this.items[4].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp6':
           if (this.items.length >= 6) {
-            this.items[5].cost = this._data[i].value;
+            this.items[5].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp7':
           if (this.items.length >= 7) {
-            this.items[6].cost = this._data[i].value;
+            this.items[6].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp8':
           if (this.items.length >= 8) {
-            this.items[7].cost = this._data[i].value;
+            this.items[7].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp9':
           if (this.items.length >= 9) {
-            this.items[8].cost = this._data[i].value;
+            this.items[8].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
         case 'pp10':
           if (this.items.length >= 10) {
-            this.items[9].cost = this._data[i].value;
+            this.items[9].cost = parseFloat(this._data[i].value);
           }else {
-            this.items.push({'cost': this._data[i].value});
+            this.items.push({'cost': parseFloat(this._data[i].value)});
           }
           break;
       }
@@ -280,11 +280,11 @@ export class GameComponent implements OnInit {
         this.log = 'Something bad happened. You lost $' + Math.floor(Math.random() * 1000);
       } else if (r < SALE) {
         // reduce the cost for now and increase it back in 1s
-        const i = this.items[Math.floor(Math.random() * this.items.length)];
-        const sale = 0.5 + (Math.random() * 0.4);
-        i.cost *= sale;
-        setTimeout(() => i.cost /= sale, 1000);
-        this.log = 'Item "' + i.name + '" is on sale';
+        // const i = this.items[Math.floor(Math.random() * this.items.length)];
+        // const sale = 0.5 + (Math.random() * 0.4);
+        // i.cost *= sale;
+        // setTimeout(() => i.cost /= sale, 1000);
+        // this.log = 'Item "' + i.name + '" is on sale';
       } else {
         this.log = '';
         console.log('But nothing happened!');
@@ -309,7 +309,7 @@ export class GameComponent implements OnInit {
     }
     console.log('bought ' + item.name + ' for ' + item.cost);
     this.money -= item.cost;
-    if (this.itemBought == '') {
+    if (this.itemBought === '') {
       this.itemBought += item.name;
     } else if (!this.itemBought.includes(item.name)) {
       this.itemBought += ',' + item.name;

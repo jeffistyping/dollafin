@@ -34,6 +34,7 @@ let getSum = function () {
       sum += parseFloat(itemsValue[i].toFixed(2));
     }
   }
+  console.log(items);
   return '$' + parseFloat(sum.toFixed(2));
 }
 
