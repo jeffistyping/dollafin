@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { buy as script_buy, draw, gainMoney } from '../script.js';
+import { buy as script_buy, draw, gainMoney } from '../script.js';=
 
 // salary const gonna get from backend
 const SALARY = 20;
@@ -52,7 +52,7 @@ export class GameComponent implements OnInit {
       
       if (r < DEATH) {
         alert("You died");
-        window.location.reload(false);
+
       } 
       
       else if (r < BAD) {
@@ -69,7 +69,7 @@ export class GameComponent implements OnInit {
       }
       
       else {
-        this.log = ''
+        this.log = '';
         console.log("But nothing happened!");
       }
     }, 1000);
@@ -98,7 +98,7 @@ export class GameComponent implements OnInit {
       this.itemBought += "," + item.name;
     }
     script_buy(item.cost, item.category);
-  }
+  };
 
 
   onHover = function(){

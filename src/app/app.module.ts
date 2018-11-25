@@ -7,8 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 let routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'game', component: GameComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: 'game', component: GameComponent, runGuardsAndResolvers: 'always'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -17,7 +17,7 @@ let routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   providers: [],
   bootstrap: [AppComponent]
