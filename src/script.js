@@ -89,7 +89,7 @@ export function draw() {
         },
         {
           data: NetIncome,
-          label: "Net Income",
+          label: "Income",
           borderColor: "#0fa91b",
           backgroundColor: "#0fa91b",
           fill: false
@@ -177,7 +177,7 @@ export function draw() {
         var txt = centerConfig.text;
         var color = centerConfig.color || '#000';
         var sidePadding = centerConfig.sidePadding || 20;
-        var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2)
+        var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2);
         ctx.font = "30px " + fontStyle;
 
         var stringWidth = ctx.measureText(txt).width;
