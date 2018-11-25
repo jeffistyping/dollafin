@@ -4,6 +4,7 @@ import { AppComponent }         from './app.component';
 import { LoginComponent }       from '../login/login.component';
 import { GameComponent }        from '../game/game.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DataService }          from '../data.service';
 
 let routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -17,9 +18,9 @@ let routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),
   ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
