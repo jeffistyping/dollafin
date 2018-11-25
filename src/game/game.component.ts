@@ -271,13 +271,17 @@ export class GameComponent implements OnInit {
       if (r < DEATH) {
         alert('You died');
         window.location.reload();
-      } else if (r < BAD) {
+      }
+
+      else if (r < BAD) {
           let loss = 0.05 + 0.15 * Math.random();
           let old = ((loss)*this.money).toFixed(2);
           this.money *= (1-loss);
           this.money = parseFloat(this.money.toFixed(2));
           this.log = (`Something bad happened. You lost $${old}`);
-      } else if (r < SALE) {
+      }
+
+      else if (r < SALE) {
         // reduce the cost for now and increase it back in 1s
         const i = this.items[Math.floor(Math.random() * this.items.length)];
         const sale = 0.5 + (Math.random() * 0.4);

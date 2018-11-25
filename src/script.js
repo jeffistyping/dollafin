@@ -41,7 +41,7 @@ let getSum = function () {
 export function gainMoney(balance, clicks, name, salary) {
   day += 1;
   days.push(day);
-  NetIncome.push(clicks*salary);
+  NetIncome.push(clicks*salary*(1+0.04/12));
   itemBought.push(name);
   NetBalance.push(balance);
   updateLine(lineChart);
