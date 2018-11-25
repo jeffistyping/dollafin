@@ -1,4 +1,4 @@
-ximport { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { buy, draw, gainMoney } from '../script.js';
 
@@ -24,7 +24,7 @@ export class GameComponent implements OnInit {
   items: any[] = [];
   categories: string[] = [];
   itemBought: string;
-  game;
+  game: any;
 
   src: String;
 
