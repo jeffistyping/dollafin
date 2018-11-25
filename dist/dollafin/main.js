@@ -23,51 +23,6 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/app-routing.module.ts":
-/*!***************************************!*\
-  !*** ./src/app/app-routing.module.ts ***!
-  \***************************************/
-/*! exports provided: AppRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../login/login.component */ "./src/login/login.component.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var routes = [
-    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
-    { path: 'main', component: _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"] }
-];
-// ngModule has to be at the end 
-var AppRoutingModule = /** @class */ (function () {
-    function AppRoutingModule() {
-    }
-    AppRoutingModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
-        })
-    ], AppRoutingModule);
-    return AppRoutingModule;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -86,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <a routerLink=\"/test\">TESTING</a>\n    <router-outlet></router-outlet>\n</div>"
+module.exports = "<div >\n\t<button class = \"btn btn-primary text-center\" routerLink=\"/login\">Start</button>\n    <router-outlet></router-outlet>\n</div>\t"
 
 /***/ }),
 
@@ -140,8 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../login/login.component */ "./src/login/login.component.ts");
 /* harmony import */ var _game_game_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../game/game.component */ "./src/game/game.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -154,9 +108,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 var routes = [
-    { path: 'home', component: _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
     { path: 'game', component: _game_game_component__WEBPACK_IMPORTED_MODULE_4__["GameComponent"] },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
@@ -171,8 +123,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot(routes),
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
+                _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes)
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
@@ -231,7 +182,7 @@ module.exports = "/*td,th {*/\n    /*padding: 10px;*/\n    /*}*/\n    #categoryD
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar fixed-top navbar-light bg-success\" style=\"height:5vh;box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n    <span class=\"text-white\"><h5>dolla dolla bills</h5></span>\n</nav>\n\n<div class=\"container-fluid\">\n    <div class=\"row bg-light\">\n        <div class=\"col-md-3 bg-white\" style=\"height: 100vh; position: fixed\">\n            <img src=\"{{src}}\" style=\"width:80%\" (mousedown)=\"onClickPig();\" (mouseup)=\"onHover();\" (mouseenter)=\"onHover();\" (mouseleave)=\"offHover();\" class=\"mx-auto d-block mt-5 pt-5\" (click)=\"addMoney()\"/>\n            <h1 class=\"text-center pt-2 text-success\">Balance: ${{ money | number : '1.2-2' }}</h1>\n        </div>\n        <div class=\"col-6 offset-3 mt-4 pt-4\" style=\"max-height: 100vh; position: fixed\">\n            <div class=\"container\">\n                <canvas id=\"purchaseChart\" width=\"100vw\" height=\"40vh\"></canvas>\n                <canvas id=\"categoryDoughnut\"></canvas>\n            </div>\n        </div>\n        <div class=\"col-md-3 mt-4 pt-4 mb-3 pb-1 offset-9 bg-dark\" style=\"min-height: 120vh;  overflow: auto\">\n            <table class=\"table table-striped table-dark table-hover\">\n                <thead>\n                <th>Item</th>\n                <th>Cost</th>\n                <th>Category</th>\n                <th>Status</th>\n                </thead>\n                <tbody>\n                <tr *ngFor=\"let item of items\">\n                    <td>{{ item.name }}</td>\n                    <td>${{ item.cost | number : '1.2-2' }}</td>\n                    <td>{{ item.category }}</td>\n                    <td><a (click)=\"buy(item)\" class=\"btn btn-success\">Buy</a></td>\n                </tr>\n                </tbody>\n            </table>\n        </div>\n\n    </div>\n\n    <div class=\"row text-white fixed-bottom\" style=\"height:5vh; background-color: #212529\">\n    <span style=\"margin:auto\">\n        {{ log }}\n    </span>>\n    </div>\n\n</div>\n\n\n"
+module.exports = "<nav class=\"navbar fixed-top navbar-light bg-success\" style=\"height:5vh;box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n    <span style=\"font-family: 'Comfortaa', cursive;\" class=\"text-white\"><h5>Dollafin</h5></span>\n</nav>\n\n<div class=\"container-fluid\">\n    <div class=\"row bg-light\">\n        <div class=\"col-md-3 bg-white\" style=\"height: 100vh; position: fixed\">\n            <img src=\"{{src}}\" style=\"width:80%\" (mousedown)=\"onClickPig();\" (mouseup)=\"onHover();\" (mouseenter)=\"onHover();\" (mouseleave)=\"offHover();\" class=\"mx-auto d-block mt-5 pt-5\" (click)=\"addMoney()\"/>\n            <h1 class=\"text-center pt-2 text-success\">Balance: ${{ money | number : '1.2-2' }}</h1>\n        </div>\n        <div class=\"col-6 offset-3 mt-4 pt-4\" style=\"max-height: 100vh; position: fixed\">\n            <div class=\"container\">\n                <canvas id=\"purchaseChart\" width=\"100vw\" height=\"40vh\"></canvas>\n                <canvas id=\"categoryDoughnut\"></canvas>\n            </div>\n        </div>\n        <div class=\"col-md-3 mt-4 pt-4 mb-3 pb-1 offset-9 bg-dark\" style=\"min-height: 120vh;  overflow: auto box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\">\n            <table class=\"table table-striped table-dark table-hover\">\n                <thead>\n                <th>Item</th>\n                <th>Cost</th>\n                <th>Category</th>\n                <th>Status</th>\n                </thead>\n                <tbody>\n                <tr *ngFor=\"let item of items\">\n                    <td>{{ item.name }}</td>\n                    <td>${{ item.cost | number : '1.2-2' }}</td>\n                    <td>{{ item.category }}</td>\n                    <td><a (click)=\"buy(item)\" class=\"btn btn-success\">Buy</a></td>\n                </tr>\n                </tbody>\n            </table>\n        </div>\n\n    </div>\n\n    <div class=\"row text-white fixed-bottom\" style=\"height:5vh; background-color: #212529\">\n    <span style=\"margin:auto\">\n        {{ log }}\n    </span>>\n    </div>\n\n</div>\n\n\n"
 
 /***/ }),
 
@@ -265,8 +216,14 @@ var GameComponent = /** @class */ (function () {
     function GameComponent() {
         this.items = [];
         this.categories = [];
-        this.addMoney = function () {
+        this.addMoney = function (item) {
             this.money += this.salary;
+            this.clicks += 1;
+            if (this.clicks % 10 == 0) {
+                Object(_script_js__WEBPACK_IMPORTED_MODULE_1__["gainMoney"])(this.money, this.clicks, this.itemBought);
+                this.itemBought = "";
+                return;
+            }
         };
         this.buy = function (item) {
             if (this.money < item.cost) {
@@ -274,6 +231,12 @@ var GameComponent = /** @class */ (function () {
             }
             console.log("bought " + item.name + " for " + item.cost);
             this.money -= item.cost;
+            if (this.itemBought == "") {
+                this.itemBought += item.name;
+            }
+            else if (!this.itemBought.includes(item.name)) {
+                this.itemBought += "," + item.name;
+            }
             Object(_script_js__WEBPACK_IMPORTED_MODULE_1__["buy"])(item.cost, item.category);
         };
         this.onHover = function () {
@@ -291,6 +254,7 @@ var GameComponent = /** @class */ (function () {
         Object(_script_js__WEBPACK_IMPORTED_MODULE_1__["draw"])();
         this.salary = SALARY;
         this.money = 0;
+        this.clicks = 0;
         this.title = "GAME";
         this.src = "../assets/banknocoin.png";
         this.log = "";
@@ -356,7 +320,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <nav class=\"navbar fixed-top navbar-light bg-success\" style=\"box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n        <span class=\"navbar-text text-light\">dolla dolla bills - Registration</span>\n    </nav>\n\n    <div class=\"div mt-5 pt-5\">\n    </div>\n\n    <form class=\"card\">\n        <div class=\"card-header\">\n            <h4>Input Information</h4>\n        </div>\n        <div class=\"card-body\">\n\n            <h5 class=\"pb-2\">Basic Information</h5>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Name</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"example-text-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-number-input\" class=\"col-2 col-form-label\">Age</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"example-number-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Financial Institution</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"financial-institution\">\n                </div>\n            </div>\n            <hr />\n\n            <h5 class=\"pb-2\">Top 5 Financial Goals</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-1\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-1\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 2</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-2\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-2\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 3</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-3\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-3\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 4</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-4\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-4\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 5</label>\n                <div class=\"col-5\">\n                    <input class=\"form-control\" type=\"text\" value=\"\" id=\"item-name-5\">\n                </div>\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-4\">\n                    <input class=\"form-control\" type=\"number\" value=\"0\" id=\"item-age-5\">\n                </div>\n            </div>\n\n            <hr />\n\n            <h5 class=\"pb-2\">10 Most Recent Purchases</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Category</label>\n            </div>\n        </div>\n        <button routerLink=\"/main\" class=\"btn btn-primary\">Submit</button>\n    </form>\n</div>"
+module.exports = "<div class=\"container\">\n    <nav class=\"navbar fixed-top navbar-light bg-success\" style=\"box-shadow: 0 0px 10px 1px rgba(0,0,0,1)\">\n        <span style=\"font-family: 'Comfortaa', cursive;\" class=\"navbar-text text-light\">Dollafin</span>\n    </nav>\n\n    <div class=\"div mt-5 pt-5\">\n    </div>\n\n    <form class=\"card mb-5\">\n        <div class=\"card-header\">\n            <h4>Input Information</h4>\n        </div>\n        <div class=\"card-body\">\n\n            <h5 class=\"pb-2\">Basic Information</h5>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Name</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"text\" value=\"Kartik Raj\" id=\"example-text-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-number-input\" class=\"col-2 col-form-label\">Age</label>\n                <div class=\"col-10\">\n                    <input class=\"form-control\" type=\"number\" value=\"14\" id=\"example-number-input\">\n                </div>\n            </div>\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-2 col-form-label\">Financial Institution</label>\n                <div class=\"col-10\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"financial-institution\">\n                        <option selected>Choose...</option>\n                        <option value=\"RBC\">RBC</option>\n                        <option value=\"Scotiabank\">Scotiabank</option>\n                        <option value=\"TD\">TD</option>\n                        <option value=\"CIBC\">CIBC</option>\n                        <option value=\"BMO\">BMO</option>\n                    </select>\n                </div>\n            </div>\n            <hr />\n\n            <h5 class=\"pb-2\">Top 3 Financial Goals</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Car\" id=\"item-name-1\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label text-right\">Price $</label>\n                <div class=\"col-2\">\n                    <input class=\"form-control\" type=\"number\" value=\"27563\" id=\"item-value-1\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"20\" id=\"item-age-1\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 2</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Condo\" id=\"item-name-2\">\n                </div>\n\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label text-right\">Price $</label>\n                <div class=\"col-2\">\n                    <input class=\"form-control\" type=\"number\" value=\"495100\" id=\"item-value-2\">\n                </div>\n\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"24\" id=\"item-age-2\">\n                </div>\n\n\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 3</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"House\" id=\"item-name-3\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label text-right\">Price $</label>\n                <div class=\"col-2\">\n                    <input class=\"form-control\" type=\"number\" value=\"782129\" id=\"item-value-3\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-2 col-form-label text-right\">Get by age</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"30\" id=\"item-age-3\">\n                </div>\n            </div>\n\n            <hr />\n\n            <h5 class=\"pb-2\">10 Most Recent Purchases</h5>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 1</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Ultraboosts\" id=\"purchase-name-1\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-1\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\">Food</option>\n                        <option value=\"Clothing\" selected>Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"250.0\" id=\"purchase-price-1\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 2</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Pizza\" id=\"purchase-name-2\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-2\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\" selected>Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"6.99\" id=\"purchase-price-2\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 3</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Coffee\" id=\"purchase-name-3\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-3\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\" selected>Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"1.75\" id=\"purchase-price-3\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 4</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Nintendo Switch\" id=\"purchase-name-4\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-4\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\">Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\" selected>Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"379.99\" id=\"purchase-price-4\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 5</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Rocket League\" id=\"purchase-name-5\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-5\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\">Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\" selected>Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"21.99\" id=\"purchase-price-5\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 6</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Physics Textbook\" id=\"purchase-name-6\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-6\">\n                        <option>Choose...</option>\n                        <option value=\"Education\" selected>Education</option>\n                        <option value=\"Food\">Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"309.80\" id=\"purchase-price-6\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 7</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Toque\" id=\"purchase-name-7\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-7\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\">Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\" selected>Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"21.99\" id=\"purchase-price-7\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 8</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Toothbrush\" id=\"purchase-name-8\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-8\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\">Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\" selected>Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"3.99\" id=\"purchase-price-8\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 9</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Hoodie\" id=\"purchase-name-9\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-9\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\">Food</option>\n                        <option value=\"Clothing\" selected>Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"39.99\" id=\"purchase-price-9\">\n                </div>\n            </div>\n\n            <div class=\"form-group row\">\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Item 10</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"text\" value=\"Burrito\" id=\"purchase-name-10\">\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Group</label>\n                <div class=\"col-3\">\n                    <select class=\"custom-select mb-2 mr-sm-2 mb-sm-0\" id=\"purchase-category-10\">\n                        <option>Choose...</option>\n                        <option value=\"Education\">Education</option>\n                        <option value=\"Food\" selected>Food</option>\n                        <option value=\"Clothing\">Clothing</option>\n                        <option value=\"Entertainment\">Entertainment</option>\n                        <option value=\"Gifts\">Gifts</option>\n                        <option value=\"Other\">Other</option>\n                    </select>\n                </div>\n\n                <label for=\"example-text-input\" class=\"col-1 col-form-label\">Price $</label>\n                <div class=\"col-3\">\n                    <input class=\"form-control\" type=\"number\" value=\"8.99\" id=\"purchase-price-10\">\n                </div>\n            </div>\n\n\n\n\n\n        </div>\n        <button routerLink=\"/game\" class=\"btn btn-primary\">Submit</button>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -427,53 +391,40 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*!***********************!*\
   !*** ./src/script.js ***!
   \***********************/
-/*! exports provided: buy, draw */
+/*! exports provided: gainMoney, buy, draw */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gainMoney", function() { return gainMoney; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buy", function() { return buy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "draw", function() { return draw; });
-var days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, ""];
+var days = [];
 // For drawing the lines
 
-var NetBalance = [
-  20, 30, 60, 80, 65
-  , 43, 80, 110, 130, 142
-  , 150, 180, 210, 160, 180
-  , 211, 312, 325, 360, 391,
-  412, 423, 444, 234, 12,
-  30, 70, 120
-];
+var NetBalance = [];
 
 var moneySpent = [];
 
-var itemBought = [
-  "", "", "", "", "Bubble Tea",
-  "Chipotle", "", "", "", "",
-  "", "", "", "Textbook", "",
-  "", "", "", "", "",
-  "", "", "", "Shoes", "Hoodie",
-  "", "", ""
-];
+var itemBought = [];
 
-var itemCategory = [
-  "", "", "", "", "Food",
-  "Food", "", "", "", "",
-  "", "", "", "School", "",
-  "", "", "", "", "",
-  "", "", "", "Clothing", "Clothing",
-  "", "", ""
-];
+var itemCategory = [];
 
 var items = [];
 var itemsValue = [];
 var hidden = [];
 
 var doughnutty;
+var lineChart;
+
+let day = 0;
 
 function updateText(chart) {
   chart.options.elements.center.text = getSum();
+  chart.update();
+}
+
+function updateLine(chart) {
   chart.update();
 }
 
@@ -485,6 +436,17 @@ let getSum = function () {
     }
   }
   return '$' + parseFloat(sum.toFixed(2));
+}
+
+function gainMoney(balance, clicks, name) {
+  day += 0.5;
+  days.push(day);
+  itemBought.push(name);
+  NetBalance.push(balance);
+  console.log(days);
+  console.log(itemBought);
+  console.log(NetBalance);
+  updateLine(lineChart);
 }
 
 function buy(cost, category) {
@@ -507,20 +469,19 @@ function draw() {
     if (moneySpent[i + 1] < 0) {
       if (!items.includes(itemCategory[i + 1])) {
         items.push(itemCategory[i + 1]);
-        itemsValue.push(parseFloat(moneySpent[i+1] * -1).toFixed(2));
+        itemsValue.push(parseFloat(moneySpent[i + 1] * -1).toFixed(2));
       } else {
-        itemsValue[items.indexOf(itemCategory[i + 1])] = parseFloat((itemsValue[items.indexOf(itemCategory[i + 1])] + (moneySpent[i + 1] * -1)).toFixed(2));
+        itemsValue[items.indexOf(itemCategory[i + 1])] = (itemsValue[items.indexOf(itemCategory[i + 1])] + (moneySpent[i + 1] * -1)).toFixed(2);
       }
     }
   }
 
   var ctx = document.getElementById("purchaseChart");
-  new Chart(ctx, {
+  lineChart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: days,
-      datasets: [
-        {
+      datasets: [{
           data: NetBalance,
           label: "Net Balance",
           borderColor: "#EBBB32",
@@ -528,14 +489,7 @@ function draw() {
           fill: false
         },
         {
-          data: [
-            20, 30, 60, 80, 120
-            , 140, 180, 190, 210, 241
-            , 269, 287, 311, 323, 353
-            , 379, 391, 423, 455, 461,
-            490, 523, 544, 584, 612,
-            683, 890, 1120
-          ],
+          data: [],
           label: "Net Income",
           borderColor: "#0fa91b",
           backgroundColor: "#0fa91b",
@@ -557,6 +511,9 @@ function draw() {
           }
         }],
         xAxes: [{
+          ticks:{
+            stepSize: 1
+          },
           scaleLabel: {
             display: true,
             labelString: "Day"
@@ -572,19 +529,25 @@ function draw() {
           },
           font: function (context) {
             // Change the label text color based on our new `hovered` context value.
-            return context.hovered ? { weight: 'bold', size: 12} : { weight: 'bold', size: 11};
+            return context.hovered ? {
+              weight: 'bold',
+              size: 12
+            } : {
+              weight: 'bold',
+              size: 11
+            };
           },
           anchor: "end",
           align: "90",
-          offset: function(context){
-            if (context.dataIndex % 2){
+          offset: function (context) {
+            if (context.dataIndex % 2) {
               return "0"
             }
-           return "6";
+            return "6";
           },
           formatter: function (value, context) {
-            if ((NetBalance[context.dataIndex+1]-NetBalance[context.dataIndex]) < 0 && context.dataset.label == "Net Balance") {
-              return context.hovered ? itemBought[context.dataIndex + 1] : "$" + (NetBalance[context.dataIndex+1]-NetBalance[context.dataIndex]);
+            if ((NetBalance[context.dataIndex + 1] - NetBalance[context.dataIndex]) < 0 && context.dataset.label == "Net Balance") {
+              return context.hovered ? itemBought[context.dataIndex + 1] : "$" + parseFloat((NetBalance[context.dataIndex + 1] - NetBalance[context.dataIndex]).toFixed(2));
             }
             return null;
           },
@@ -645,8 +608,7 @@ function draw() {
   Chart.defaults.doughnut.legend.onClick = function (e, legendItem) {
     if (hidden.includes(legendItem.text)) {
       hidden.splice(hidden.indexOf(legendItem.text));
-    }
-    else {
+    } else {
       hidden.push(legendItem.text);
     }
     original.call(this, e, legendItem);
@@ -657,14 +619,12 @@ function draw() {
     type: 'doughnut',
     data: {
       labels: items,
-      datasets: [
-        {
-          label: "Purchases by Category ($)",
-          //"#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"
-          backgroundColor: ["#ffcdb2", "#ffb4a2", "#e5989b", "#b5838d", "#87838e", "#afacb3", "#c9c8cc"],
-          data: itemsValue
-        }
-      ]
+      datasets: [{
+        label: "Purchases by Category ($)",
+        //"#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"
+        backgroundColor: ["#ffcdb2", "#ffb4a2", "#e5989b", "#b5838d", "#87838e", "#afacb3", "#c9c8cc"],
+        data: itemsValue
+      }]
     },
     options: {
       legend: {
@@ -680,7 +640,7 @@ function draw() {
           anchor: "end",
           align: "end",
           offset: "-5",
-          font:{
+          font: {
             size: 10
           },
           formatter: function (value) {
@@ -700,8 +660,6 @@ function draw() {
   });
 };
 
-
-
 /***/ }),
 
 /***/ 0:
@@ -711,7 +669,7 @@ function draw() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/kartikrajkanna/workspace/d_c/dollafin/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/jf/github/dollafin/src/main.ts */"./src/main.ts");
 
 
 /***/ })
