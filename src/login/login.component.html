@@ -6,7 +6,7 @@
     <div class="div mt-5 pt-5">
     </div>
 
-    <form class="card">
+    <form class="card mb-5">
         <div class="card-header">
             <h4>Input Information</h4>
         </div>
@@ -16,79 +16,84 @@
             <div class="form-group row">
                 <label for="example-text-input" class="col-2 col-form-label">Name</label>
                 <div class="col-10">
-                    <input class="form-control" type="text" value="" id="example-text-input">
+                    <input class="form-control" type="text" value="Kartik Raj" id="example-text-input">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="example-number-input" class="col-2 col-form-label">Age</label>
                 <div class="col-10">
-                    <input class="form-control" type="number" value="0" id="example-number-input">
+                    <input class="form-control" type="number" value="14" id="example-number-input">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="example-text-input" class="col-2 col-form-label">Financial Institution</label>
                 <div class="col-10">
-                    <input class="form-control" type="text" value="" id="financial-institution">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="financial-institution">
+                        <option selected>Choose...</option>
+                        <option value="RBC">RBC</option>
+                        <option value="Scotiabank">Scotiabank</option>
+                        <option value="TD">TD</option>
+                        <option value="CIBC">CIBC</option>
+                        <option value="BMO">BMO</option>
+                    </select>
                 </div>
             </div>
             <hr />
 
-            <h5 class="pb-2">Top 5 Financial Goals</h5>
+            <h5 class="pb-2">Top 3 Financial Goals</h5>
 
             <div class="form-group row">
                 <label for="example-text-input" class="col-1 col-form-label">Item 1</label>
-                <div class="col-5">
-                    <input class="form-control" type="text" value="" id="item-name-1">
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Car" id="item-name-1">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label text-right">Price $</label>
+                <div class="col-2">
+                    <input class="form-control" type="number" value="27563" id="item-value-1">
                 </div>
 
                 <label for="example-text-input" class="col-2 col-form-label text-right">Get by age</label>
-                <div class="col-4">
-                    <input class="form-control" type="number" value="0" id="item-age-1">
+                <div class="col-3">
+                    <input class="form-control" type="number" value="20" id="item-age-1">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="example-text-input" class="col-1 col-form-label">Item 2</label>
-                <div class="col-5">
-                    <input class="form-control" type="text" value="" id="item-name-2">
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Condo" id="item-name-2">
                 </div>
+
+
+                <label for="example-text-input" class="col-1 col-form-label text-right">Price $</label>
+                <div class="col-2">
+                    <input class="form-control" type="number" value="495100" id="item-value-2">
+                </div>
+
+
                 <label for="example-text-input" class="col-2 col-form-label text-right">Get by age</label>
-                <div class="col-4">
-                    <input class="form-control" type="number" value="0" id="item-age-2">
+                <div class="col-3">
+                    <input class="form-control" type="number" value="24" id="item-age-2">
                 </div>
+
+
             </div>
 
             <div class="form-group row">
                 <label for="example-text-input" class="col-1 col-form-label">Item 3</label>
-                <div class="col-5">
-                    <input class="form-control" type="text" value="" id="item-name-3">
+                <div class="col-3">
+                    <input class="form-control" type="text" value="House" id="item-name-3">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label text-right">Price $</label>
+                <div class="col-2">
+                    <input class="form-control" type="number" value="782129" id="item-value-3">
                 </div>
 
                 <label for="example-text-input" class="col-2 col-form-label text-right">Get by age</label>
-                <div class="col-4">
-                    <input class="form-control" type="number" value="0" id="item-age-3">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="example-text-input" class="col-1 col-form-label">Item 4</label>
-                <div class="col-5">
-                    <input class="form-control" type="text" value="" id="item-name-4">
-                </div>
-                <label for="example-text-input" class="col-2 col-form-label text-right">Get by age</label>
-                <div class="col-4">
-                    <input class="form-control" type="number" value="0" id="item-age-4">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="example-text-input" class="col-1 col-form-label">Item 5</label>
-                <div class="col-5">
-                    <input class="form-control" type="text" value="" id="item-name-5">
-                </div>
-                <label for="example-text-input" class="col-2 col-form-label text-right">Get by age</label>
-                <div class="col-4">
-                    <input class="form-control" type="number" value="0" id="item-age-5">
+                <div class="col-3">
+                    <input class="form-control" type="number" value="30" id="item-age-3">
                 </div>
             </div>
 
@@ -98,8 +103,258 @@
 
             <div class="form-group row">
                 <label for="example-text-input" class="col-1 col-form-label">Item 1</label>
-                <label for="example-text-input" class="col-1 col-form-label">Category</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Ultraboosts" id="purchase-name-1">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-1">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothing" selected>Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="250.0" id="purchase-price-1">
+                </div>
             </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 2</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Pizza" id="purchase-name-2">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-2">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food" selected>Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="6.99" id="purchase-price-2">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 3</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Coffee" id="purchase-name-3">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-3">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food" selected>Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="1.75" id="purchase-price-3">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 4</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Nintendo Switch" id="purchase-name-4">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-4">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment" selected>Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="379.99" id="purchase-price-4">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 5</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Rocket League" id="purchase-name-5">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-5">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment" selected>Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="21.99" id="purchase-price-5">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 6</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Physics Textbook" id="purchase-name-6">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-6">
+                        <option>Choose...</option>
+                        <option value="Education" selected>Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="309.80" id="purchase-price-6">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 7</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Toque" id="purchase-name-7">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-7">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts" selected>Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="21.99" id="purchase-price-7">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 8</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Toothbrush" id="purchase-name-8">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-8">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other" selected>Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="3.99" id="purchase-price-8">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 9</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Hoodie" id="purchase-name-9">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-9">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothing" selected>Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="39.99" id="purchase-price-9">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-text-input" class="col-1 col-form-label">Item 10</label>
+                <div class="col-3">
+                    <input class="form-control" type="text" value="Burrito" id="purchase-name-10">
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Group</label>
+                <div class="col-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="purchase-category-10">
+                        <option>Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Food" selected>Food</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Gifts">Gifts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="example-text-input" class="col-1 col-form-label">Price $</label>
+                <div class="col-3">
+                    <input class="form-control" type="number" value="8.99" id="purchase-price-10">
+                </div>
+            </div>
+
+
+
+
+
         </div>
         <button routerLink="/main" class="btn btn-primary">Submit</button>
     </form>
