@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { buy as script_buy, draw } from '../script.js';
+import { buy as script_buy, draw, gainMoney } from '../script.js';
 
 // salary const gonna get from backend
 const SALARY = 20;
@@ -20,9 +20,10 @@ export class GameComponent implements OnInit {
   money: number;
   salary: number;
   log: string;
-  
+  clicks: number; 
   items: any[] = [];
   categories: string[] = [];
+  itemBought: string;
   game;
 
   src: String;
@@ -33,6 +34,7 @@ export class GameComponent implements OnInit {
 
     this.salary = SALARY;
     this.money = 0;
+    this.clicks = 0;
     this.title = "GAME";
     this.src = "../assets/banknocoin.png";
     this.log = "";
@@ -73,8 +75,14 @@ export class GameComponent implements OnInit {
     }, 1000);
   }
 
-  addMoney = function() {
+  addMoney = function(item) {
     this.money += this.salary;
+    this.clicks += 1;
+    if (this.clicks % 10 == 0){
+      gainMoney(this.money, this.clicks, this.itemBought);
+      this.itemBought = "";
+      return;
+    }
   };
 
   buy = function(item) {
@@ -83,7 +91,12 @@ export class GameComponent implements OnInit {
     }
     console.log("bought " + item.name + " for " + item.cost);
     this.money -= item.cost;
-
+    if (this.itemBought == ""){
+      this.itemBought += item.name;
+    }
+    else if (!this.itemBought.includes(item.name)){
+      this.itemBought += "," + item.name;
+    }
     script_buy(item.cost, item.category);
   }
 
