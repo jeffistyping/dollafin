@@ -38,10 +38,10 @@ let getSum = function () {
   return '$' + parseFloat(sum.toFixed(2));
 }
 
-export function gainMoney(balance, clicks, name) {
-  day += 0.5;
+export function gainMoney(balance, clicks, name, salary) {
+  day += 1;
   days.push(day);
-  NetIncome.push(clicks*20);
+  NetIncome.push(clicks*salary);
   itemBought.push(name);
   NetBalance.push(balance);
   updateLine(lineChart);

@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { buy, draw, gainMoney } from '../script.js';
+import { buy, draw, gainMoney } from '../script';
 import { DataService } from '../data.service';
 
-// salary const gonna get from backend
-const SALARY = 20;
-
 // event constants
-const DEATH = 0;
-const BAD = 0.175;
-const SALE = 0.45;
+const DEATH = 0.0001;
+const BAD = 0.15;
+const SALE = 0.30;
 
 @Component({
   selector: 'app-game',
@@ -19,7 +16,6 @@ const SALE = 0.45;
 export class GameComponent implements OnInit {
   title: string;
   money: number;
-  salary: number;
   log: string;
   clicks: number;
   items: any[] = [];
@@ -31,7 +27,7 @@ export class GameComponent implements OnInit {
   src: String;
   name: string;
   data: any;
-  age: number;
+  salary: number;
 
   constructor(service: DataService) {
     this.data = service;
@@ -45,8 +41,8 @@ export class GameComponent implements OnInit {
         case 'Name':
           this.name = this._data[i].value;
           break;
-        case 'Age':
-          this.age = this._data[i].value;
+        case 'Salary':
+          this.salary = parseFloat(this._data[i].value);
           break;
         case 'pn1':
           if (this.items.length >= 1) {
@@ -263,7 +259,6 @@ export class GameComponent implements OnInit {
 
     console.log(this.items);
 
-    this.salary = SALARY;
     this.money = 0;
     this.clicks = 0;
     this.title = 'GAME';
@@ -277,26 +272,29 @@ export class GameComponent implements OnInit {
         alert('You died');
         window.location.reload();
       } else if (r < BAD) {
-        this.log = 'Something bad happened. You lost $' + Math.floor(Math.random() * 1000);
+          let loss = 0.05 + 0.15 * Math.random();
+          let old = ((loss)*this.money).toFixed(2);
+          this.money *= (1-loss);
+          this.money = parseFloat(this.money.toFixed(2));
+          this.log = (`Something bad happened. You lost $${old}`);
       } else if (r < SALE) {
         // reduce the cost for now and increase it back in 1s
-        // const i = this.items[Math.floor(Math.random() * this.items.length)];
-        // const sale = 0.5 + (Math.random() * 0.4);
-        // i.cost *= sale;
-        // setTimeout(() => i.cost /= sale, 1000);
-        // this.log = 'Item "' + i.name + '" is on sale';
+        const i = this.items[Math.floor(Math.random() * this.items.length)];
+        const sale = 0.5 + (Math.random() * 0.4);
+        i.cost *= sale;
+        setTimeout(() => i.cost /= sale, 3000);
+        this.log = 'Item "' + i.name + '" is on sale';
       } else {
         this.log = '';
-        console.log('But nothing happened!');
       }
-    }, 1000);
+    }, 3000);
   }
 
   addMoney = function (item) {
     this.money += this.salary;
     this.clicks += 1;
     if (this.clicks % 10 == 0) {
-      gainMoney(this.money, this.clicks, this.itemBought);
+      gainMoney(this.money, this.clicks, this.itemBought, this.salary);
       this.itemBought = '';
       return;
     }
