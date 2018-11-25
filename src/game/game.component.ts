@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+ximport { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { buy, draw, gainMoney } from '../script.js';
 
