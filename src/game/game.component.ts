@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { buy as script_buy, draw, gainMoney } from '../script.js';=
+import { buy, draw, gainMoney } from '../script.js';
 
 // salary const gonna get from backend
 const SALARY = 20;
@@ -20,7 +20,7 @@ export class GameComponent implements OnInit {
   money: number;
   salary: number;
   log: string;
-  clicks: number; 
+  clicks: number;
   items: any[] = [];
   categories: string[] = [];
   itemBought: string;
@@ -28,49 +28,43 @@ export class GameComponent implements OnInit {
 
   src: String;
 
-  ngOnInit() : void {
+  ngOnInit(): void {
 
     draw();
 
     this.salary = SALARY;
     this.money = 0;
     this.clicks = 0;
-    this.title = "GAME";
-    this.src = "../assets/banknocoin.png";
-    this.log = "";
+    this.title = 'GAME';
+    this.src = '../assets/banknocoin.png';
+    this.log = '';
 
     for (let i = 0; i < 10; i++) {
       this.items.push({
         'name': 'item' + i,
-        'cost': parseFloat((Math.random()*100).toFixed(2)),
-        'category': 'category' + (i%3)
+        'cost': parseFloat((Math.random() * 100).toFixed(2)),
+        'category': 'category' + (i % 3)
       });
     }
 
     this.game = setInterval(() => {
-      let r = Math.random();
-      
-      if (r < DEATH) {
-        alert("You died");
+      const r = Math.random();
 
-      } 
-      
-      else if (r < BAD) {
-        this.log = "Something bad happened. You lost $" + Math.floor(Math.random() * 1000);
-      }
-      
-      else if (r < SALE) {
+      if (r < DEATH) {
+        alert('You died');
+        window.location.reload();
+      } else if (r < BAD) {
+        this.log = 'Something bad happened. You lost $' + Math.floor(Math.random() * 1000);
+      } else if (r < SALE) {
         // reduce the cost for now and increase it back in 1s
-        let i = this.items[Math.floor(Math.random()*this.items.length)];
-        let sale = 0.5 + (Math.random()*0.4);
+        const i = this.items[Math.floor(Math.random() * this.items.length)];
+        const sale = 0.5 + (Math.random() * 0.4);
         i.cost *= sale;
         setTimeout(() => i.cost /= sale, 1000);
-        this.log = "Item \"" + i.name + "\" is on sale";
-      }
-      
-      else {
+        this.log = 'Item "' + i.name + '" is on sale';
+      } else {
         this.log = '';
-        console.log("But nothing happened!");
+        console.log('But nothing happened!');
       }
     }, 1000);
   }
@@ -78,38 +72,37 @@ export class GameComponent implements OnInit {
   addMoney = function(item) {
     this.money += this.salary;
     this.clicks += 1;
-    if (this.clicks % 10 == 0){
+    if (this.clicks % 10 == 0) {
       gainMoney(this.money, this.clicks, this.itemBought);
-      this.itemBought = "";
+      this.itemBought = '';
       return;
     }
   };
 
-  buy = function(item) {
+  buyItem = function(item) {
     if (this.money < item.cost) {
       return;
     }
-    console.log("bought " + item.name + " for " + item.cost);
+    console.log('bought ' + item.name + ' for ' + item.cost);
     this.money -= item.cost;
-    if (this.itemBought == ""){
+    if (this.itemBought == '') {
       this.itemBought += item.name;
+    } else if (!this.itemBought.includes(item.name)) {
+      this.itemBought += ',' + item.name;
     }
-    else if (!this.itemBought.includes(item.name)){
-      this.itemBought += "," + item.name;
-    }
-    script_buy(item.cost, item.category);
+    buy(item.cost, item.category);
   };
 
 
-  onHover = function(){
+  onHover = function() {
     this.src = '../assets/bank.png';
   };
 
-  offHover = function(){
+  offHover = function() {
     this.src = '../assets/banknocoin.png';
   };
 
-  onClickPig = function(){
+  onClickPig = function() {
     this.src = '../assets/moneypig.png';
 
   };

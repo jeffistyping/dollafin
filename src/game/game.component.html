@@ -27,7 +27,7 @@
                     <td>{{ item.name }}</td>
                     <td>${{ item.cost | number : '1.2-2' }}</td>
                     <td>{{ item.category }}</td>
-                    <td><a (click)="buy(item)" class="btn btn-success">Buy</a></td>
+                    <td><a (click)="buyItem(item)" class="btn btn-success">Buy</a></td>
                 </tr>
                 </tbody>
             </table>
