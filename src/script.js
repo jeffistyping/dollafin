@@ -2,7 +2,7 @@ var days = [];
 // For drawing the lines
 
 var NetBalance = [];
-
+var NetIncome = [];
 var moneySpent = [];
 
 var itemBought = [];
@@ -40,11 +40,9 @@ let getSum = function () {
 export function gainMoney(balance, clicks, name) {
   day += 0.5;
   days.push(day);
+  NetIncome.push(clicks*20);
   itemBought.push(name);
   NetBalance.push(balance);
-  console.log(days);
-  console.log(itemBought);
-  console.log(NetBalance);
   updateLine(lineChart);
 }
 
@@ -85,10 +83,11 @@ export function draw() {
           label: "Net Balance",
           borderColor: "#EBBB32",
           backgroundColor: "#EBBB32",
-          fill: false
+          fill: false,
+          lineTension: 0.2
         },
         {
-          data: [],
+          data: NetIncome,
           label: "Net Income",
           borderColor: "#0fa91b",
           backgroundColor: "#0fa91b",
@@ -130,10 +129,10 @@ export function draw() {
             // Change the label text color based on our new `hovered` context value.
             return context.hovered ? {
               weight: 'bold',
-              size: 12
+              size: 14
             } : {
               weight: 'bold',
-              size: 11
+              size: 14
             };
           },
           anchor: "end",
@@ -236,11 +235,11 @@ export function draw() {
       plugins: {
         datalabels: {
           color: 'black',
-          anchor: "end",
-          align: "end",
-          offset: "-5",
+          anchor: "center",
+          align: "center",
+          offset: "1",
           font: {
-            size: 10
+            size: 13
           },
           formatter: function (value) {
             return value;
